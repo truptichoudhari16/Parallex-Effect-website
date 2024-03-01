@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  height: 100vh;
+
+  /* image not scroll right and left */
+  overflow-x: hidden;
+
+  /* niche scroll hona chaiye image  */
+  overflow-y: auto;
+
+  /* 3D image (game) ko on karane ke liye perspective define karana padata hai  */
+  perspective: 10px;
+}
+
+.container {
+  position: relative;
+
+  /* flex me main axis horizontal hota hai  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  /* for 3D game (lpo bhi changes nhi hona chaiye isl)  */
+  transform-style: preserve-3d;
+
+  /* z-index is used for overlapping purpose  */
+  z-index: -1;
+}
+.background {
+  /* image ko door karane ke liye, by using scale image ko badi kar sakati hai  */
+  transform: translateZ(-40px) scale(6);
+  height: 100%;
+  width: 100%;
+}
+
+.foreground {
+  transform: translateZ(-20px) scale(3);
+  /* height: 100%; */
+}
+
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  /* Adventure Content img ke uper show karane ke liye  */
+  z-index: -1;
+
+  /* fit  image in container (pura width cover karlengi image ) */
+  object-fit: cover;
+}
+
+h1 {
+  position: absolute;
+  top: 5rem;
+  font-size: 10rem;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+section {
+  background-color: rgb(45, 45, 45);
+  color: white;
+  padding: 5rem 0;
+}
+
+.secHeading {
+  font-size: 5rem;
+  padding: 0 10rem;
+}
+
+.text {
+  font-size: 1.5rem;
+  padding: 0 10rem;
+  margin: 5rem 0;
+}
+
+.bg {
+  position: relative;
+  width: 100%;
+  /* img fixed rhti hai or chije us img per scroll krti hai  */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+}
+
+.desc {
+  position: absolute;
+  background-color: white;
+  padding: 0.5rem 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateX(-50%);
+  color: black;
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.bg1 {
+  background-image: url(Biking.jpg);
+}
+
+.bg2 {
+  background-image: url(parachute.jpg);
+}
+
+.bg3 {
+  background-image: url(water.jpg);
+}
